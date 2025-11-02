@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>N?tic?l?r</title>
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
+
+    <ul>
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} -- <strong>{{ choice.votes }}</strong> ses</li>
+    {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'polls:detail' question.id %}">Yeniden ses ver</a>
+    <br>
+    <a href="{% url 'polls:index' %}">Esas sehife</a>
+</body>
+</html>
