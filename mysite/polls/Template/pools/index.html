@@ -1,0 +1,17 @@
+<!-- polls/templates/polls/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Polls Index</title>
+</head>
+<body>
+    <h1>Welcome to Polls!</h1>
+    <ul>
+        {% for question in latest_question_list %}
+            <li>{{ question.question_text }}</li>
+        {% empty %}
+            <li>No polls are available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
